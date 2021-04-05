@@ -1,0 +1,256 @@
+:root {
+    --txt-color-wh: rgb(255, 255, 255);
+    --blue-social-and-brd: rgb(25, 143, 245);
+    --red-social: rgb(220, 65, 76);
+    --paragraph-light-grey: rgb(126, 130, 150);
+    --card-bg: rgb(37, 42, 65);
+    --gradient: linear-gradient(90deg,rgb(253, 196, 104),
+                                      hsl(329, 70%, 58%));
+
+    --toggler-color: linear-gradient(rgb(55, 143, 230),
+                                     rgb(62, 218, 130));
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: rgb(30, 32, 42);
+    font-weight: 700;
+}
+
+.body-dark-mode {
+    background: rgb(255, 255, 255);
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+label {
+    display: none;
+}
+
+h1, h2 {
+    font-weight: 700;
+}
+
+
+
+/* //////////////////////////// UTILITIES ///////////////////////////////// */
+
+
+
+.width-80 {
+    width: 80%;
+}
+
+.border-blue {
+    border-top: 5px solid var(--blue-social-and-brd);
+}
+
+.border-red {
+    border-top: 5px solid hsl(348, 97%, 39%);
+}
+
+.light-paragraph {
+    color: var(--paragraph-light-grey);
+    font-size: .8rem;
+}
+
+.socials-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.arrow-icons {
+    width: .6rem;
+    height: .4rem;
+}
+
+.number-big {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    color: var(--txt-color-wh);
+}
+
+.number-small {
+    font-size: 2.5rem;
+    color: var(--txt-color-wh);
+}
+
+.number-dark-mode {
+    color: rgb(0, 0, 0);
+}
+
+
+
+/* /////////////////////////////// MAIN /////////////////////////////////////////// */
+
+
+
+.top-theme {
+    background: rgb(30, 32, 42);
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+    padding-bottom: 7rem;
+    z-index: -1000;
+}
+
+.top-dark-mode {
+    background-color: rgb(245, 247, 255);
+}
+
+.main-header, .second-header {
+    color: var(--txt-color-wh);
+    font-size: 1.9rem;
+}
+
+.m-dark-mode {
+    color: black;
+}
+
+.s-dark-mode {
+    color: var(--paragraph-light-grey);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 28px;
+  }
+  
+  .switch input {
+      display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--toggler-color);
+    transition: .4s;
+  }
+
+  .slider-dark-mode {
+      background: hsl(230, 22%, 74%);
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(36, 36, 102);
+    transition: .4s;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+
+/* /////////////////////////////////// ROWs OF CARDS ///////////////////////////// */
+
+
+
+.socials {
+    margin-top: -6rem;
+}
+
+.card-top, .card {
+    background-color:  var(--card-bg);
+    padding: 0;
+    -webkit-box-shadow: 0px 0px 50px -23px #000000; 
+    box-shadow: 0px 0px 50px -30px #000000;
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
+}
+
+.card-top:hover, .card:hover, .card-gradient:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    padding: 0 1.5rem;
+    border: none;
+}
+
+.card-gradient {
+    background: var(--gradient);
+    padding: 0;
+    box-shadow: 0px 0px 50px -30px #000000;
+    transition: transform .3s ease-in-out;
+}
+
+.dark-layer {
+    background-color:  var(--card-bg);
+    margin-top: 5px;
+    transition: transform .3s ease-in-out;
+}
+
+.card-dark-mode {
+    background: rgb(240, 242, 250);
+}
+
+
+.followers-paragraph {
+    letter-spacing: 5px;
+    font-size: .9rem;
+    color: var(--paragraph-light-grey);
+    font-weight: 400;
+    margin-top: -.5rem;
+}
+
+.increase-paragraph {
+    color: rgb(29, 180, 137);
+    font-size: .8rem;
+}
+
+.decrease-paragraph {
+    color: rgb(220, 65, 76);
+    font-size: .8rem;
+}
+
+
+
+/* /////////////////////////////// MEDIA QUERIES ///////////////////////// */
+
+
+
+@media (max-width: 1200px) {
+    .number-big {
+        font-size: 3rem;
+    }
+
+    .number-small {
+        font-size: 1.8rem;
+    }
+
+    @media (max-width: 500px) {
+        .main-header {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .brd-top {
+            border-top: 1px solid var(--paragraph-light-grey);
+        }
+    }
+}
+
